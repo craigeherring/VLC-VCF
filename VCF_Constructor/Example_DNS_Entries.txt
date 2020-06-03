@@ -1,0 +1,58 @@
+#DNS Required for Management Domain / Bringup
+#These FQDN/IP combinations match the info in the default-vcf-ems.json
+sddc-manager.vcf.lab.local 	 10.0.0.10
+psc-1.vcf.lab.local 	 10.0.0.11
+vcenter-1.vcf.lab.local 	 10.0.0.12
+nsx-1.vcf.lab.local 	 10.0.0.13
+psc-2.vcf.lab.local 	 10.0.0.14
+vrli.vcf.lab.local 	 10.0.0.15
+vrli-1.vcf.lab.local 	 10.0.0.16
+vrli-2.vcf.lab.local 	 10.0.0.17
+vrli-3.vcf.lab.local 	 10.0.0.18
+esx04.vcf.lab.local 	 10.0.0.104
+esx03.vcf.lab.local 	 10.0.0.103
+esx02.vcf.lab.local 	 10.0.0.102
+esx01.vcf.lab.local 	 10.0.0.101
+
+
+##vv Optional vv##
+CB-01a.vcf.lab.local 	 10.0.0.225
+
+#Additional Hosts for Management Expansion, VI Domain creation
+esxi-10.vcf.lab.local	10.0.0.110
+esxi-11.vcf.lab.local	10.0.0.111
+esxi-12.vcf.lab.local	10.0.0.112
+
+#Additional vCenter and NSX-V manager for VI Domain Creation with NSX-V
+vcenter-2.vcf.lab.local 	 10.0.0.50
+nsx-2.vcf.lab.local			10.0.0.51
+
+## OR ##
+
+#Additional vCenter and NSX-T manager for VI Domain Creation with NSX-T
+vcenter-2.vcf.lab.local 	 10.0.0.50
+nsxt.vcf.lab.local 	 10.0.0.51
+nsxt-1.vcf.lab.local 	 10.0.0.52
+nsxt-2.vcf.lab.local 	 10.0.0.53
+nsxt-3.vcf.lab.local 	 10.0.0.54
+
+#Additional Optional vRealize Components
+vrslcm-vcf.lab.local		10.0.0.60
+vrops.vcf.lab.local		10.0.0.61
+vrops-node1.vcf.lab.local	10.0.0.62
+
+vra.vcf.lab.local		10.0.0.70
+vra-1.vcf.lab.local		10.0.0.71
+vra-2.vcf.lab.local		10.0.0.72
+vra-3.vcf.lab.local		10.0.0.73
+iaasweb.vcf.lab.local
+iaasweb-1.vcf.lab.local
+iaasweb-2.vcf.lab.local
+iaasmgr-1.vcf.lab.local
+iaasmgr-2.vcf.lab.local
+agent-1.vcf.lab.local
+agent-2.vcf.lab.local
+dem-1.vcf.lab.local
+dem-2.vcf.lab.local
+
+

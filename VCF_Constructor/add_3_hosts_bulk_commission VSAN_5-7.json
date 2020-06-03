@@ -1,0 +1,25 @@
+{
+    "hostsSpec": [
+        {
+            "hostfqdn": "esxi-5.vcf.vvd.local",
+            "username": "root",
+            "password": "VMware123!",
+            "storageType": "VSAN",
+            "networkPoolName": "bringup-networkpool"
+        },        
+		{
+            "hostfqdn": "esxi-6.vcf.vvd.local",
+            "username": "root",
+            "password": "VMware123!",
+            "storageType": "VSAN",
+            "networkPoolName": "bringup-networkpool"
+        },       
+		{
+            "hostfqdn": "esxi-7.vcf.vvd.local",
+            "username": "root",
+            "password": "VMware123!",
+            "storageType": "VSAN",
+            "networkPoolName": "bringup-networkpool"
+        }
+    ]
+}

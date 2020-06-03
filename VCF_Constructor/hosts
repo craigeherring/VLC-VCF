@@ -1,0 +1,49 @@
+127.0.0.1    vmware-plugin
+::1          vmware-plugin
+192.168.71.91	psc-1	psc-1.vcf.sddc.local
+192.168.71.103	esxi-4	esxi-4.vcf.sddc.local
+192.168.71.4	sddc-manager	sddc-manager.vcf.sddc.local
+192.168.31.10	vrli	vrli.vcf.sddc.local
+192.168.71.102	esxi-3	esxi-3.vcf.sddc.local
+192.168.71.95	nsxmanager	nsxmanager.vcf.sddc.local
+192.168.31.11	loginsight-node-1	loginsight-node-1.vcf.sddc.local
+192.168.71.90	vcenter-1	vcenter-1.vcf.sddc.local
+192.168.71.50	vcenter-2	vcenter-2.vcf.sddc.local
+192.168.71.51	nsxmanager-2	nsxmanager-2.vcf.sddc.local
+192.168.31.13	loginsight-node-3	loginsight-node-3.vcf.sddc.local
+192.168.31.12	loginsight-node-2	loginsight-node-2.vcf.sddc.local
+192.168.71.100	esxi-1	esxi-1.vcf.sddc.local
+192.168.71.101	esxi-2	esxi-2.vcf.sddc.local
+192.168.71.92	psc-2	psc-2.vcf.sddc.local
+192.168.71.105	esxi-5	esxi-5.vcf.sddc.local
+192.168.71.106	esxi-6	esxi-6.vcf.sddc.local
+192.168.71.107	esxi-7	esxi-7.vcf.sddc.local
+192.168.71.110	esxi-10	esxi-10.vcf.sddc.local
+192.168.71.111	esxi-11	esxi-11.vcf.sddc.local
+192.168.71.112	esxi-12	esxi-12.vcf.sddc.local
+
+
+
+psc-1.vcf.vvd.local. FQDN4 192.168.71.91
+esxi-4.vcf.vvd.local. FQDN4 192.168.71.103
+sddc-manager.vcf.vvd.local. FQDN4 192.168.71.4
+vrli.vcf.vvd.local. FQDN4 192.168.31.10
+esxi-3.vcf.vvd.local. FQDN4 192.168.71.102
+nsxmanager.vcf.vvd.local. FQDN4 192.168.71.95
+loginsight-node-1.vcf.vvd.local. FQDN4 192.168.31.11
+vcenter-1.vcf.vvd.local. FQDN4 192.168.71.90
+vcenter-2.vcf.vvd.local. FQDN4 192.168.71.50
+nsxmanager-2.vcf.vvd.local. FQDN4 192.168.71.51
+loginsight-node-3.vcf.vvd.local. FQDN4 192.168.31.13
+loginsight-node-2.vcf.vvd.local. FQDN4 192.168.31.12
+esxi-1.vcf.vvd.local. FQDN4 192.168.71.100
+esxi-2.vcf.vvd.local. FQDN4 192.168.71.101
+psc-2.vcf.vvd.local. FQDN4 192.168.71.92
+vvd1-CB-01a.vcf.vvd.local. FQDN4 192.168.71.221
+esxi-5.vcf.vvd.local. FQDN4 192.168.71.105
+esxi-6.vcf.vvd.local. FQDN4 192.168.71.106
+esxi-7.vcf.vvd.local. FQDN4 192.168.71.107
+esxi-10.vcf.vvd.local. FQDN4 192.168.71.110
+esxi-11.vcf.vvd.local. FQDN4 192.168.71.111
+esxi-12.vcf.vvd.local. FQDN4 192.168.71.112
+

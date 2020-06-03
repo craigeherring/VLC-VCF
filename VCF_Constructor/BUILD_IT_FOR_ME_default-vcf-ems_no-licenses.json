@@ -1,0 +1,544 @@
+{
+  "workflowName": "workflowconfig/workflowspec-ems.json",
+  "workflowVersion": "3.9.1",
+  "sddcManagerSpec": {
+    "secondUserCredentials": {
+      "userName": "vcf",
+      "password": "VMware123!"
+    },
+    "ipAddress": "10.0.0.4",
+    "netmask": "255.255.255.0",
+    "hostname": "sddc-manager",
+    "rootUserCredentials": {
+      "userName": "root",
+      "password": "VMware123!"
+    },
+    "restApiCredentials": {
+      "userName": "admin",
+      "password": "VMware123!"
+    },
+    "vcenterId": "vcenter-1"
+  },
+  "sddcId": "SSO-Site1-workflowspec-ems",
+  "skipEsxThumbprintValidation": true,
+  "esxLicense": "REPLACE-ME",
+  "managementPoolName": "bringup-networkpool",
+  "ceipEnabled": true,
+  "ntpSpec": {
+    "ntpServers": ["10.0.0.221"]
+  },
+  "dnsSpec": {
+    "subdomain": "vcf.sddc.local",
+    "domain": "vcf.sddc.local",
+    "nameserver": "10.0.0.221"
+  },
+  "esxiHostSpecs": [
+    {
+      "association": "SDDC-Datacenter1",
+      "ipAddressPrivate": {
+        "ipAddress": "10.0.0.100",
+        "cidr": "10.0.0.0/24",
+        "gateway": "10.0.0.221"
+      },
+      "esxiHostname": "esxi-1",
+      "esxiCredentials": {
+        "userName": "root",
+        "password": "VMware123!"
+      },
+      "vSwitch": "vSwitch0",
+      "serverId": "host-1"
+    },{
+      "association": "SDDC-Datacenter1",
+      "ipAddressPrivate": {
+        "ipAddress": "10.0.0.101",
+        "cidr": "10.0.0.0/24",
+        "gateway": "10.0.0.221"
+      },
+      "esxiHostname": "esxi-2",
+      "esxiCredentials": {
+        "userName": "root",
+        "password": "VMware123!"
+      },
+      "vSwitch": "vSwitch0",
+      "serverId": "host-2"
+    },{
+      "association": "SDDC-Datacenter1",
+      "ipAddressPrivate": {
+        "ipAddress": "10.0.0.102",
+        "cidr": "10.0.0.0/24",
+        "gateway": "10.0.0.221"
+      },
+      "esxiHostname": "esxi-3",
+      "esxiCredentials": {
+        "userName": "root",
+        "password": "VMware123!"
+      },
+      "vSwitch": "vSwitch0",
+      "serverId": "host-3"
+    },{
+      "association": "SDDC-Datacenter1",
+      "ipAddressPrivate": {
+        "ipAddress": "10.0.0.103",
+        "cidr": "10.0.0.0/24",
+        "gateway": "10.0.0.221"
+      },
+      "esxiHostname": "esxi-4",
+      "esxiCredentials": {
+        "userName": "root",
+        "password": "VMware123!"
+      },
+      "vSwitch": "vSwitch0",
+      "serverId": "host-4"
+    }
+  ],
+  "vCenterSpecs": [
+    {
+      "vcenterIP": "10.0.0.90",
+      "vcenterHostname": "vcenter-1",
+      "vcenterId": "vcenter-1",
+      "licenseFile": "REPLACE-ME",
+      "vmSize": "small",
+      "rootVcenterPassword": "VMware123!"
+    }
+  ],
+  "pscSpecs": [
+    {
+      "pscId": "psc-1",
+      "vcenterId": "vcenter-1",
+      "pscIp": "10.0.0.91",
+      "pscHostName": "psc-1",
+      "rootPscPassword": "VMware123!",
+      "embeddedPsc": false,
+      "adminUserSsoPassword": "VMware123!",
+      "pscSsoSpec": {
+        "ssoDomain": "vsphere.local",
+        "isJoinSsoDomain": false,
+        "ssoSiteName": "SSO-Site1"
+      }
+    }
+    , {
+      "pscId": "psc-2",
+      "vcenterId": "vcenter-1",
+      "pscIp": "10.0.0.92",
+      "pscHostName": "psc-2",
+      "embeddedPsc": false,
+      "rootPscPassword": "VMware123!",
+      "adminUserSsoPassword": "VMware123!",
+      "pscSsoSpec": {
+        "ssoDomain": "vsphere.local",
+        "isJoinSsoDomain": false,
+        "ssoSiteName": "SSO-Site1",
+        "replicationPartner": "psc-1"
+      }
+    }
+  ],
+  "clusterSpecs": [
+    {
+      "clusterId": "SDDC-Cluster1",
+      "vcenterId": "vcenter-1",
+      "clusterEvcMode": "",
+      "resourcePoolSpecs": [{
+        "name": "Mgmt-ResourcePool",
+        "type": "management",
+        "cpuReservationPercentage": 0,
+        "cpuLimit": -1,
+        "cpuReservationExpandable": true,
+        "cpuSharesLevel": "high",
+        "cpuSharesValue": 0,
+        "memoryReservationMb": 16384,
+        "memoryLimit": -1,
+        "memoryReservationExpandable": true,
+        "memorySharesLevel": "normal",
+        "memorySharesValue": 0
+      }, {
+        "name": "Edge-ResourcePool",
+        "type": "network",
+        "cpuReservationPercentage": 0,
+        "cpuLimit": -1,
+        "cpuReservationExpandable": true,
+        "cpuSharesLevel": "normal",
+        "cpuSharesValue": 0,
+        "memoryReservationPercentage": 0,
+        "memoryLimit": -1,
+        "memoryReservationExpandable": true,
+        "memorySharesLevel": "normal",
+        "memorySharesValue": 0
+      }, {
+        "name": "User-Edge-ResourcePool",
+        "type": "compute",
+        "cpuReservationPercentage": 0,
+        "cpuLimit": -1,
+        "cpuReservationExpandable": true,
+        "cpuSharesLevel": "normal",
+        "cpuSharesValue": 0,
+        "memoryReservationPercentage": 0,
+        "memoryLimit": -1,
+        "memoryReservationExpandable": true,
+        "memorySharesLevel": "normal",
+        "memorySharesValue": 0
+      }, {
+        "name": "User-VM-ResourcePool",
+        "type": "compute",
+        "cpuReservationPercentage": 0,
+        "cpuLimit": -1,
+        "cpuReservationExpandable": true,
+        "cpuSharesLevel": "normal",
+        "cpuSharesValue": 0,
+        "memoryReservationPercentage": 0,
+        "memoryLimit": -1,
+        "memoryReservationExpandable": true,
+        "memorySharesLevel": "normal",
+        "memorySharesValue": 0
+      }]
+    }
+  ],
+  "vsanSpecs":[
+    {
+      "vsanId": "vsan-1",
+      "vcenterId":"vcenter-1",
+      "licenseFile": "REPLACE-ME",
+      "vsanDedup": "false",
+      "datastoreName": "VCF-VSAN"
+    }
+  ],
+  "dvsSpecs": [
+    {
+      "dvsId": "SDDC-Dswitch-Private",
+      "vcenterId":"vcenter-1",
+      "vmnics":[
+        "vmnic0",
+        "vmnic1"
+      ],
+      "mtu": 8940,
+      "networks":[
+        "MANAGEMENT",
+        "VMOTION",
+        "VSAN",
+        "UPLINK01",
+        "UPLINK02"
+      ],
+      "niocSpec":[
+        {
+          "trafficType":"VSAN",
+          "value":"HIGH"
+        },
+        {
+          "trafficType":"VMOTION",
+          "value":"LOW"
+        },
+        {
+          "trafficType":"VDP",
+          "value":"LOW"
+        },
+        {
+          "trafficType":"VIRTUALMACHINE",
+          "value":"HIGH"
+        },
+        {
+          "trafficType":"MANAGEMENT",
+          "value":"NORMAL"
+        },
+        {
+          "trafficType":"NFS",
+          "value":"LOW"
+        },
+        {
+          "trafficType":"HBR",
+          "value":"LOW"
+        },
+        {
+          "trafficType":"FAULTTOLERANCE",
+          "value":"LOW"
+        },
+        {
+          "trafficType":"ISCSI",
+          "value":"LOW"
+        }
+      ]
+    }
+  ],
+  "networkSpecs": [
+    {
+      "networkType": "MANAGEMENT",
+      "subnet": "10.0.0.0/24",
+      "gateway": "10.0.0.221",
+      "VLANId": "0",
+      "mtu": "1500",
+      "portGroupKey": "SDDC-DPortGroup-Mgmt",
+      "standbyUplinks":[],
+      "activeUplinks":[
+        "uplink1",
+        "uplink2"
+      ]
+    },{
+      "networkType": "VMOTION",
+      "subnet": "10.0.8.0/24",
+      "gateway": "10.0.8.1",
+      "VLANId": "0",
+      "mtu": "8940",
+      "portGroupKey": "SDDC-DPortGroup-vMotion",
+      "association": "SDDC-Datacenter1",
+      "includeIpAddressRanges": [{"endIpAddress": "10.0.8.120", "startIpAddress": "10.0.8.100"}],
+      "standbyUplinks":[],
+      "activeUplinks":[
+        "uplink1",
+        "uplink2"
+      ]
+    },{
+      "networkType": "VSAN",
+      "subnet": "10.0.4.0/24",
+      "gateway": "10.0.4.1",
+      "VLANId": "0",
+      "mtu": "8940",
+      "portGroupKey": "SDDC-DPortGroup-VSAN",
+      "includeIpAddressRanges": [{"endIpAddress": "10.0.4.120", "startIpAddress": "10.0.4.100"}],
+      "standbyUplinks":[],
+      "activeUplinks":[
+        "uplink1",
+        "uplink2"
+      ]
+    },{
+      "networkType": "UPLINK01",
+      "subnet": "172.27.11.0/24",
+      "gateway": "172.27.11.1",
+      "VLANId": "0",
+      "mtu": "1500",
+      "portGroupKey": "mgmt01-uplink01",
+      "association": "SDDC-Datacenter1",
+      "standbyUplinks":[]
+    },{
+      "networkType": "UPLINK02",
+      "subnet": "172.27.12.0/24",
+      "gateway": "172.27.12.1",
+      "VLANId": "0",
+      "mtu": "1500",
+      "portGroupKey": "mgmt01-uplink02",
+      "association": "SDDC-Datacenter1",
+      "standbyUplinks":[]
+    },
+    {
+      "networkType": "UDLR",
+      "subnet": "192.168.100.0/24",
+      "mtu": "9000",
+      "association": "SDDC-Datacenter1",
+      "VLANId": "0"
+    },
+    {
+      "networkType": "X_REGION",
+      "subnet": "192.168.11.0/24",
+      "gateway": "192.168.11.1",
+      "mtu": "9000",
+      "association": "SDDC-Datacenter1",
+      "VLANId": "0"
+    },
+    {
+      "networkType": "REGION_SPECIFIC",
+      "subnet": "192.168.31.0/24",
+      "gateway": "192.168.31.1",
+      "mtu": "9000",
+      "association": "SDDC-Datacenter1",
+      "VLANId": "0"
+    }
+  ],
+  "nsxSpecs": [
+    {
+      "nsxId": "nsxmanager",
+      "vcenterId": "vcenter-1",
+      "nsxManagerIp": "10.0.0.95",
+      "nsxManagerHostname": "nsxmanager",
+      "nsxSegmentRangeBegin": "5000",
+      "nsxSegmentRangeEnd": "5200",
+      "multicastRangeBegin": "239.1.0.0",
+      "multicastRangeEnd": "239.1.255.255",
+      "universalSegmentRangeBegin": "30000",
+      "universalSegmentRangeEnd": "32000",
+      "universalMulticastRangeBegin": "239.2.0.0",
+      "universalMulticastRangeEnd": "239.2.255.255",
+      "license": "REPLACE-ME",
+      "adminNsxManagerPassword": "VMware123!",
+      "privilegedNsxManagerPassword": "VMware123!",
+      "adminNsxControllerPassword": "VMware123!VMware123!",
+      "nsxVXLANSpec": {
+        "VXLANVLANId": "0",
+        "VXLANMtu": "8940",
+        "subnetWithCidr": "",
+        "gateway": "",
+        "VXLANCluster": "SDDC-Cluster1",
+        "VXLANDvs": "SDDC-Dswitch-Private",
+        "poolStartAddress": "",
+        "poolEndAddress": "",
+        "teamingPolicy": "LOADBALANCE_SRCID",
+        "vtepVmknicCount": 2
+      },
+      "controllerIPPoolSpec":{
+        "poolName": "SSO-Site1-mgmt01-nsxc01",
+        "startIp": "10.0.0.40",
+        "endIp": "10.0.0.42",
+        "prefix": "24",
+        "defaultGateway": "10.0.0.221"
+      },
+      "nsxEdgePassword": "VMware123!VMware123!",
+      "nsxEdgeSpecs": [
+        {
+          "edgeName": "esg-01",
+          "edgeSize": "compact",
+          "edgeType": "ESG",
+          "vnics": [
+            {
+                "name": "Uplink01",
+                "type": "uplink",
+                "networkType": "UPLINK01",
+                "primaryIpAddress": "172.27.11.2",
+                "useForDynamicRouterConfiguration": true
+            }, {
+                "name": "Uplink02",
+                "type": "uplink",
+                "networkType": "UPLINK02",
+                "primaryIpAddress": "172.27.12.2"
+            }, {
+              "type": "internal",
+              "networkType": "UDLR",
+              "attachToLogicalSwitch": true,
+              "primaryIpAddress": "192.168.100.1"
+            }
+          ]
+        }, {
+          "edgeName": "esg-02",
+          "edgeSize": "compact",
+          "edgeType": "ESG",
+          "vnics": [
+            {
+              "name": "Uplink01",
+              "type": "uplink",
+              "networkType": "UPLINK01",
+              "primaryIpAddress": "172.27.11.3"
+            }, {
+              "name": "Uplink02",
+              "type": "uplink",
+              "networkType": "UPLINK02",
+              "primaryIpAddress": "172.27.12.3",
+              "useForDynamicRouterConfiguration": true
+            }, {
+              "type": "internal",
+              "networkType": "UDLR",
+              "attachToLogicalSwitch": true,
+              "primaryIpAddress": "192.168.100.2"
+            }
+          ]
+        }, {
+          "edgeName": "udlr-1",
+          "edgeSize": "compact",
+          "edgeType": "UDLR",
+          "vnics": [
+            {
+              "name": "Uplink",
+              "type": "uplink",
+              "attachToLogicalSwitch": true,
+              "useForDynamicRouterConfiguration": true,
+              "networkType": "UDLR",
+              "primaryIpAddress": "192.168.100.3"
+            }, {
+              "type": "internal",
+              "attachToLogicalSwitch": true,
+              "networkType": "X_REGION"
+            }, {
+              "type": "internal",
+              "attachToLogicalSwitch": true,
+              "networkType": "REGION_SPECIFIC"
+            }
+          ]
+        }
+      ],
+      "nsxBgpSpec": {
+        "localAutonomousSystem": 65003,
+        "defaultPassword": "",
+        "skipBgpValidation": false,
+        "nsxEdgeBgpSpecs": [
+          {
+            "edgeType": "ESG",
+            "neighbours": [
+              {
+                "neighbourIp": "172.27.11.1",
+                "autonomousSystem": 65001,
+                "password": ""
+              }, {
+                "neighbourIp": "172.27.12.1",
+                "autonomousSystem": 65001,
+                "password": ""
+              }, {
+                "neighbourIp": "192.168.100.4",
+                "keepAliveTimeSeconds": 1,
+                "holdDownTimeSeconds": 3
+              }
+            ]
+          }, {
+            "edgeType": "UDLR",
+            "neighbours": [
+              {
+                "neighbourIp": "192.168.100.1",
+                "forwardingIp": "192.168.100.3",
+                "protocolIp": "192.168.100.4"
+              }, {
+                "neighbourIp": "192.168.100.2",
+                "forwardingIp": "192.168.100.3",
+                "protocolIp": "192.168.100.4"
+              }
+            ]
+          }
+        ]
+      },
+      "logicalSwitches": [
+        {
+          "name": "Universal Transit Network",
+          "controlPlaneMode": "HYBRID_MODE",
+          "networkType": "UDLR",
+          "transportZoneId": "universal-transport-zone"
+        },
+        {
+          "name": "Mgmt-xRegion01-VXLAN",
+          "controlPlaneMode": "HYBRID_MODE",
+          "networkType": "X_REGION",
+          "transportZoneId": "universal-transport-zone"
+        },
+        {
+          "name": "Mgmt-RegionA01-VXLAN",
+          "controlPlaneMode": "HYBRID_MODE",
+          "networkType": "REGION_SPECIFIC",
+          "transportZoneId": "universal-transport-zone"
+        }
+      ],
+      "transportZones": [
+        {
+          "id": "universal-transport-zone",
+          "name": "Mgmt Universal Transport Zone",
+          "controlPlaneMode": "HYBRID_MODE",
+          "universal": true}
+      ],
+      "transportZoneName": "transportzone-1"
+    }
+  ],
+  "logInsightSpecs": [
+    {
+      "vcenterId": "vcenter-1",
+      "adminPassword": "VMware123!",
+      "sshPassword": "VMware123!",
+      "loadBalancerHostname": "vrli",
+      "loadBalancerIpAddress": "192.168.31.10",
+      "vmSize": "xsmall",
+      "networkType": "REGION_SPECIFIC",
+	  "license": "REPLACE-ME",
+      "logInsightNodeSpecs": [
+        {
+          "ipAddress": "192.168.31.11",
+          "hostname": "loginsight-node-1"
+        }, {
+          "ipAddress": "192.168.31.12",
+          "hostname": "loginsight-node-2"
+        }, {
+          "ipAddress": "192.168.31.13",
+          "hostname": "loginsight-node-3"
+        }
+      ]
+    }
+  ]
+}
